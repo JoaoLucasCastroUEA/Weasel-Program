@@ -1,0 +1,32 @@
+import customtkinter as ctk
+import main
+root = ctk.CTk()
+ctk.set_appearance_mode("Dark")
+
+class application():
+    def __init__(self):
+        self.root = root
+        self.janela()
+        self.frames_da_tela()
+        self.slider_da_tela()
+        root.mainloop()
+
+
+    def janela(self):
+        self.root.title("Weasel Program")
+        self.root.geometry("1000x600")
+        ctk.set_appearance_mode("Dark")
+
+    def frames_da_tela(self):
+        self.frame1 = ctk.CTkFrame(self.root)
+        self.frame1.place(relx = '0', rely = '0', relheight = '1', relwidth = '0.3')
+
+
+    def slider_da_tela(self):
+        scale_int = ctk.IntVar(value=100)
+        slider_populacao = ctk.CTkSlider(self.frame1, from_ = 10, to = 200, width=300,height=20,variable=scale_int, command= lambda value: print(scale_int.get()))
+        slider_populacao.place(relx = '0',rely='0.7',)
+
+
+
+application()
